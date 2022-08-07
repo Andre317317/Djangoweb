@@ -18,9 +18,11 @@ from django.urls import path
 
 from django.contrib import admin
 from django.urls import path
-from .views import first_page
+from crm import views
+#from .views import first_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', first_page)
+    path('', views.first_page)
+#    path('', first_page)
 ]
