@@ -19,10 +19,15 @@ from django.urls import path
 from django.contrib import admin
 from django.urls import path
 from crm import views
+from django.conf.urls.static import static
+from django.conf import settings
+
 #from .views import first_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.first_page)
+    path('', views.first_page),
+    path('thanks/', views.thanks_page, name = 'thanks_page')
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 #    path('', first_page)
-]
+
